@@ -4,11 +4,11 @@ class Resolv
   def self.use_google_dns
     # dns
     nameservers = ['8.8.8.8', '8.8.4.4']
-    dns = Resolv::DNS.new(nameserver: nameservers)
+    dns = Resolv::DNS.new(nameserver: nameservers, search: ['mydns.com'], ndots: 1))
     
     # resolver
-    hosts = Resolv::Hosts.new
-    resolver = new([hosts, dns, search: ['mydns.com'], ndots: 1)])
+    hosts = Resolv::Hosts.new()
+    resolver = new([hosts, dns]
     
     # replace constant
     remove_const :DefaultResolver
