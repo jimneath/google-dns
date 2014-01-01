@@ -8,7 +8,7 @@ class Resolv
     
     # resolver
     hosts = Resolv::Hosts.new()
-    resolver = new([hosts, dns]
+    resolver = new([hosts, dns])
     
     # replace constant
     remove_const :DefaultResolver
